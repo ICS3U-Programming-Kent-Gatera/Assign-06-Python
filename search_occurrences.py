@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Created by: Kent Gatera
 # Created on: Nov 18
-# This program searches for a user query within a list.
+# This program searches for a user query within a list and displays its position.
 
 
 def find_occurrences(list_package, search_query):
