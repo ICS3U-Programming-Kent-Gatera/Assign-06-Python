@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Created by: Kent Gatera
-# Created on: Nov 15
+# Created on: Nov 18
 # This program searches for a user query within a list.
 
 
