@@ -43,24 +43,6 @@ def get_list_from_user_using_split():
         return list_from_user
 
 
-def display_summary(string_found, position_indices):
-    # Displaying the position of the occurrence.
-    print(f"'{string_found}' appeared at", end=": ")
-    num_times = len(position_indices)
-    for i in range(0, num_times):
-        if i == 0 and i < num_times - 1:  # first but not last
-            print(f"{position_indices[i]}", end="")
-        elif i > 0 and i < num_times - 1:  # middle but not last
-            print(f", {position_indices[i]}", end="")
-        else:
-            if i == 0 and i == num_times - 1:  # first and last
-                print(f"{position_indices[i]}", end=". ")
-            else:  # not first but is last
-                print(f", and {position_indices[i]}", end=". ")
-
-    print(f"So, {num_times} times.")
-
-
 def main():
     # Adding a bunch user input.
     # list_from_user = get_list_from_user()
@@ -77,8 +59,21 @@ def main():
         num_times = find_total_occurrences(position_indices)
 
         if num_times > 0:
-            # Created this function because everything got messy in main..
-            display_summary(string_to_search, position_indices)
+            # Displaying the position of the occurrence.
+            print(f"'{string_to_search}' appeared at", end=": ")
+            num_times = len(position_indices)
+            for i in range(0, num_times):
+                if i == 0 and i < num_times - 1:  # first but not last
+                    print(f"{position_indices[i]}", end="")
+                elif i > 0 and i < num_times - 1:  # middle but not last
+                    print(f", {position_indices[i]}", end="")
+                else:
+                    if i == 0 and i == num_times - 1:  # first and last
+                        print(f"{position_indices[i]}", end=". ")
+                    else:  # not first but is last
+                        print(f", and {position_indices[i]}", end=". ")
+
+            print(f"So, {num_times} times.")
         else:
             # In case the number of occurrences is less than 0 (-1).
             print("(-1) Query not found")
